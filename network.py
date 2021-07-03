@@ -1,8 +1,11 @@
 # coding=utf-8
-import cookielib
+# import cookielib
+import http.cookiejar
 import json
 import urllib
-import urllib2
+# import urllib.request
+import urllib.request
+import urllib.error
 
 
 class MyWeb:
@@ -15,11 +18,11 @@ class MyWeb:
             'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8",
         }
 
-        self.cookie = cookielib.CookieJar()
-        self.cookie_support = urllib2.HTTPCookieProcessor(self.cookie)
-        self.opener = urllib2.build_opener(self.cookie_support,
-                                           urllib2.HTTPHandler)
-        urllib2.install_opener(self.opener)
+        self.cookie = http.cookiejar.CookieJar()  
+        self.cookie_support = urllib.request.HTTPCookieProcessor(self.cookie)
+        self.opener = urllib.request.build_opener(self.cookie_support,
+                                           urllib.request.HTTPHandler)
+        urllib.request.install_opener(self.opener)
 
     def post(self, posturl, dictdata, header):
         """
@@ -30,11 +33,11 @@ class MyWeb:
         """
 
         postdata = urllib.urlencode(dictdata)
-        request = urllib2.Request(posturl, postdata, header)
+        request = urllib.request.Request(posturl, postdata, header)
         try:
-            content = urllib2.urlopen(request)
+            content = urllib.request.urlopen(request)
             return content
-        except Exception, e:
+        except Exception as e:
             print ("post:" + str(e))
             return None
 
@@ -45,11 +48,11 @@ class MyWeb:
         :param string posturl: url地址
         :param dict dictdata: 发送的数据
         """
-        request = urllib2.Request(url=posturl, headers=header, data=json.dumps(dictdata).encode())
+        request = urllib.request.Request(url=posturl, headers=header, data=json.dumps(dictdata).encode())
         try:
-            content = urllib2.urlopen(request)
+            content = urllib.request.urlopen(request)
             return content
-        except Exception, e:
+        except Exception as e:
             print ("post:" + str(e))
             return None
 
@@ -60,12 +63,12 @@ class MyWeb:
         :param string posturl: url地址
         :param dict dictdata: 发送的数据
         """
-        request = urllib2.Request(url=posturl, headers=header, data=json.dumps(dictdata).encode())
+        request = urllib.request.Request(url=posturl, headers=header, data=json.dumps(dictdata).encode())
         request.get_method = lambda: 'PUT'
         try:
-            content = urllib2.urlopen(request)
+            content = urllib.request.urlopen(request)
             return content
-        except Exception, e:
+        except Exception as e:
             print ("post:" + str(e))
             return None
 
@@ -78,11 +81,11 @@ class MyWeb:
         :return content: 常使用read的方法来读取返回数据
         :rtype : instance or None
         """
-        request = urllib2.Request(url, None, header)
+        request = urllib.request.Request(url, None, header)
         try:
-            content = urllib2.urlopen(request)
+            content = urllib.request.urlopen(request)
             return content
-        except Exception, e:
+        except Exception as e:
             print ("open:" + str(e))
             return None
 
