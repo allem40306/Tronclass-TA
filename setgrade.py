@@ -5,17 +5,13 @@ import time
 import urllib, urllib.parse
 import network
 
-def merge(x, y):
-    z = {**x, **y}  
-    return z
-
 _data = u".\\score_list.csv"
 host_url = 'https://elearn2.fju.edu.tw/'
 keyword_epoch = u'第2章作业-2'
 web_work = network.MyWeb()
-homework_id = '1146466'
-course_id = '211946'
-cookie = '_ga_MR2C5GXFNE=GS1.1.1607527276.4.0.1607527278.0; AMCV_8E929CC25A1FB2B30A495C97@AdobeOrg=1687686476|MCIDTS|18774|MCMID|19569004409626950860973084268519580203|MCAAMLH-1622623969|11|MCAAMB-1622623969|RKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y|MCOPTOUT-1622026369s|NONE|MCAID|NONE|vVersion|3.0.0; __gads=ID=ee3a715645d78dd5:T=1622019191:S=ALNI_Ma9Y-52Pf82P3v-XqiaiOk0NvmxwQ; utag_main=v_id:0179a7e05a030016555a5f0a417003073005106b00978$_sn:1$_se:13$_ss:0$_st:1622021237937$ses_id:1622019168773;exp-session$_pn:7;exp-session$vapi_domain:fju.edu.tw; __dtsu=51A016157775948A2C241DCDAE35286E; _cc_id=b7b0fe2616dfa66f8f85602496a2576a; optimizelyEndUserId=oeu1622798454321r0.8011179797526045; amplitude_id_9f6c0bb8b82021496164c672a7dc98d6_edmfju.edu.tw=eyJkZXZpY2VJZCI6ImUxNTYzZTAwLWEyN2YtNDI5NS1iNjUzLTQ5ZmE2NDI2MGU1MVIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTYyMjc5ODYzMjUxOCwibGFzdEV2ZW50VGltZSI6MTYyMjc5ODc0MzQxMSwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6Niwic2VxdWVuY2VOdW1iZXIiOjZ9; amplitude_id_408774472b1245a7df5814f20e7484d0fju.edu.tw=eyJkZXZpY2VJZCI6ImI2MGI3M2EyLTQ5OGYtNDBhOC1hZGNlLWQ2MjI4MmUxZDc3YyIsInVzZXJJZCI6bnVsbCwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNjIyNzk4NDU1MjI2LCJsYXN0RXZlbnRUaW1lIjoxNjIyNzk4NzYxMjYzLCJldmVudElkIjoyMiwiaWRlbnRpZnlJZCI6NDMsInNlcXVlbmNlTnVtYmVyIjo2NX0=; _ga_468JNHR1KE=GS1.1.1623484503.1.1.1623484522.0; _ga=GA1.3.1413307594.1563160832; _gat=1; session=V2-1-6539d396-91b9-431b-9e2b-71bd8b1695cd.MjIxMzU4.1625305433.hfIb2yH0JXthW4hMD2qxzvgPPqU'
+homework_id = '' # 需要輸入
+course_id = '' # 需要輸入
+cookie = '' # 需要輸入
 
 if __name__ == '__main__':
 
